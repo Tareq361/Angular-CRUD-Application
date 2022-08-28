@@ -6,6 +6,10 @@ import { AddBookComponent } from './Book/add-book/add-book.component';
 import { UpdateBookComponent } from './Book/update-book/update-book.component';
 import { DeleteBookComponent } from './Book/delete-book/delete-book.component';
 import { ListBooksComponent } from './Book/list-books/list-books.component';
+import { ListBookshopsComponent } from './BookShop/list-bookshops/list-bookshops.component';
+import { AddBookshopComponent } from './BookShop/add-bookshop/add-bookshop.component';
+import { UpdateBookshopComponent } from './BookShop/update-bookshop/update-bookshop.component';
+import { DeleteBookshopComponent } from './BookShop/delete-bookshop/delete-bookshop.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +17,11 @@ import { ListBooksComponent } from './Book/list-books/list-books.component';
     AddBookComponent,
     UpdateBookComponent,
     DeleteBookComponent,
-    ListBooksComponent
+    ListBooksComponent,
+    ListBookshopsComponent,
+    AddBookshopComponent,
+    UpdateBookshopComponent,
+    DeleteBookshopComponent
   ],
   imports: [
     BrowserModule
