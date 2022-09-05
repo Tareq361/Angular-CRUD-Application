@@ -13,7 +13,7 @@ export class BookShopService {
     return this.http.get(`${this.baseUrl}`);
   }
 
-  deleteBookShop(id: number): Observable<any> {
+  deleteBookShop(id: number|undefined): Observable<any> {
     return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
   }
   createBookShop(book: Object): Observable<Object> {
@@ -24,7 +24,7 @@ export class BookShopService {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
 
-  updateBoookShop(id: number | undefined, value: any): Observable<Object> {
+  updateBookShop(id: number | undefined, value: any): Observable<Object> {
     return this.http.put(`${this.baseUrl}/${id}`, value);
   }
 

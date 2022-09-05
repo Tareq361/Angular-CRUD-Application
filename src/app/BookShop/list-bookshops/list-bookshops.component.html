@@ -1,1 +1,23 @@
-<p>list-bookshops works!</p>
+<div class="row">
+  <div class="col-sm rounded" *ngFor="let shops of bookShops | async">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{shops.shopName}}</h5>
+        <p class="card-text">Shop Number: {{shops.shopNumber}}</p>
+        <p class="card-text">Email: {{shops.email}}</p>
+        <p class="card-text">Contact: {{shops.contactNumber}}</p>
+        <p class="card-text">{{shops.location}}</p>
+        <h6 class="card-subtitle">Book List</h6>
+        <ol class="card-title" *ngFor="let book of shops.booklist"><li><a class="card-link">{{book.title}}</a></li></ol>
+        <div class="card-footer">
+          <a href="#" class="btn btn-outline-success card-link">Update</a>
+
+          <a (click)="deleteBookShop(shops.id)" class="btn btn-danger card-link">Delete</a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
