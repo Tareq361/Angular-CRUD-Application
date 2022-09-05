@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'books', pathMatch: 'full' },
   { path: 'Books', component: ListBooksComponent },
   { path: 'Bookshops', component: ListBookshopsComponent },
+  { path: 'AddBookshops', component: AddBookshopComponent },
   { path: 'AddBook', component: AddBookComponent },
   {path: 'Books/UpdateBook/:id', component: UpdateBookComponent },
 

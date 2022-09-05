@@ -1,1 +1,50 @@
-<p>add-bookshop works!</p>
+
+
+<div [hidden]="submitted" style="width: 100px;margin: 0 auto;
+    width:40%" class="shadow-lg p-3 mb-5 bg-white rounded">
+  <h3>Add Book Shop</h3>
+
+  <form [formGroup]="addBookShopForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="shopName">Shop Name</label>
+      <input type="text" class="form-control" id="shopName" formControlName="shopName">
+      <small *ngIf="title?.invalid && title?.touched" class="text-danger">Shop Name is required</small>
+    </div>
+
+    <div class="form-group">
+      <label for="shopNumber">Shop Number</label>
+      <input type="number" class="form-control" id="shopNumber" formControlName="shopNumber" name="shopNumber">
+    </div>
+
+    <div class="form-group">
+      <label for="location">Location</label>
+      <input type="text" class="form-control" id="location" formControlName="location" name="location">
+    </div>
+    <div class="form-group">
+      <label for="contactNumber">Contact Number</label>
+      <input type="number" class="form-control" id="contactNumber" formControlName="contactNumber" name="contactNumber">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" formControlName="email" name="email">
+
+    </div>
+    <div class="form-group">
+      <label for="books">Choose Books:</label>
+
+      <select multiple class="form-control"  name="books" id="books" formControlName="books">
+        <option type="checkbox" required *ngFor="let book of booklist | async" [ngValue]="book">{{book.title}}</option>
+
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!addBookShopForm.valid">Submit</button>
+
+  </form>
+</div>
+
+<!--<div [hidden]="!submitted">-->
+<!--  <h4>You submitted successfully!</h4>-->
+<!--  &lt;!&ndash; <button class="btn btn-success" (click)="newEmployee()">Add</button> &ndash;&gt;-->
+<!--</div>-->
+
