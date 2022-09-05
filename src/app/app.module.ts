@@ -16,7 +16,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {RouterModule, Routes} from "@angular/router";
 
 const routes: Routes = [
-  { path: '', redirectTo: 'books', pathMatch: 'full' },
+  { path: '', redirectTo: 'Bookshops', pathMatch: 'full' },
   { path: 'Books', component: ListBooksComponent },
   { path: 'Bookshops', component: ListBookshopsComponent },
   { path: 'AddBookshops', component: AddBookshopComponent },

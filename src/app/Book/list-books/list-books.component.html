@@ -1,37 +1,25 @@
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h2>Book List</h2>
+<h2 style="text-align: center;">Book List</h2>
+<div class="row">
+  <div class="col-sm rounded" *ngFor="let book of books | async">
+    <div class="card box">
+      <div class="card-body">
+        <h5 class="card-title">{{book.title}}</h5>
+        <p class="card-text">Year of Publish: {{book.yearOfPublish}}</p>
+        <p class="card-text">Genre: {{book.genre}}</p>
+        <p class="card-text">Publisher: {{book.publisher}}</p>
+        <h6 class="card-subtitle">Author</h6>
+        <ol class="card-title"  *ngFor="let author of book.authors"><li style="color:blue">{{author.authorName}}</li></ol>
+        <p class="card-subtitle">BDT{{book.price}}</p>
+        <div class="card-footer">
+          <a routerLink="UpdateBook/{{book.id}}" class="btn btn-outline-success card-link">Update</a>
+
+          <a (click)="deleteBook(book.id)" class="btn btn-danger card-link">Delete</a>
+        </div>
+
+      </div>
+    </div>
+
   </div>
-  <div class="panel-body">
-    <table class="table table-striped">
-      <thead>
-      <tr>
-        <th>Id</th>
-        <th>Title</th>
-        <th>Price</th>
-        <th>YearOfPublish</th>
-        <th>author</th>
-        <th>genre</th>
-        <th>publisher</th>
-        <th>Actions</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let book of books | async">
-        <td>{{book.id}}</td>
-        <td>{{book.title}}</td>
-        <td>{{book.price}}</td>
-        <td>{{book.yearOfPublish}}</td>
-        <td><ol *ngFor="let author of book.authors">
-          <li>{{author.authorName}}</li>
-        </ol></td>
-        <td>{{book.genre}}</td>
-        <td>{{book.publisher}}</td>
-        <td><button (click)="deleteBook(book.id)" class="btn btn-danger">Delete</button></td>
-        <td><a class="btn btn-primary" routerLink="UpdateBook/{{book.id}}" routerLinkActive="active" >Update</a></td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
+
 </div>
 
