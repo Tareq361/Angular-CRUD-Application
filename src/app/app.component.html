@@ -6,7 +6,7 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Book Shop</a>
     <button
@@ -22,16 +22,32 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Book list</a>
-        <a class="nav-link active" href="#">Add book</a>
-        <a class="nav-link active" href="#">Book Shop List</a>
+        <a class="nav-link active" aria-current="page" routerLink="Books" routerLinkActive="active">Book list</a>
+        <a class="nav-link active" routerLink="AddBook" routerLinkActive="active" >Add book</a>
+        <a class="nav-link active" routerLink="Bookshops" routerLinkActive="active">Book Shop List</a>
         <a class="nav-link active" href="#">Add Book Shop</a>
 
 
       </div>
     </div>
   </div>
+
 </nav>
+<div class="container">
+  <br>
+  <h2 style="text-align: center;">{{title}}</h2>
+  <hr>
+  <div class="card">
+    <div class="card-body">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <span>All Rights Reserved 2022 @Tareq</span>
+  </div>
+</footer>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->

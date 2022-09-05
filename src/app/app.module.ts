@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {FormBuilder, ReactiveFormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AddBookComponent } from './Book/add-book/add-book.component';
 import { UpdateBookComponent } from './Book/update-book/update-book.component';
@@ -10,7 +10,19 @@ import { ListBookshopsComponent } from './BookShop/list-bookshops/list-bookshops
 import { AddBookshopComponent } from './BookShop/add-bookshop/add-bookshop.component';
 import { UpdateBookshopComponent } from './BookShop/update-bookshop/update-bookshop.component';
 import { DeleteBookshopComponent } from './BookShop/delete-bookshop/delete-bookshop.component';
+import { AppRoutingModule } from './app-routing.module';
+import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import {RouterModule, Routes} from "@angular/router";
 
+const routes: Routes = [
+  { path: '', redirectTo: 'books', pathMatch: 'full' },
+  { path: 'Books', component: ListBooksComponent },
+  { path: 'Bookshops', component: ListBookshopsComponent },
+  { path: 'AddBook', component: AddBookComponent },
+  {path: 'Books/UpdateBook/:id', component: UpdateBookComponent },
+
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,10 +33,14 @@ import { DeleteBookshopComponent } from './BookShop/delete-bookshop/delete-books
     ListBookshopsComponent,
     AddBookshopComponent,
     UpdateBookshopComponent,
-    DeleteBookshopComponent
+    DeleteBookshopComponent,
+
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

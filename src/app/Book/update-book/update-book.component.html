@@ -1,1 +1,49 @@
-<p>update-book works!</p>
+<p>update-bookshop works!</p>
+
+
+<div [hidden]="submitted" style="width: 100px;margin: 0 auto;
+    width:40%">
+  <h3>Update Book</h3>
+
+  <form [formGroup]="updateBookForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" id="title" formControlName="title">
+      <small *ngIf="title?.invalid && title?.touched" class="text-danger">Title is required</small>
+    </div>
+
+    <div class="form-group">
+      <label for="ypb">Year of Publish</label>
+      <input type="text" class="form-control" id="ypb" formControlName="yearOfPublish" name="ypb">
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input type="number" class="form-control" id="price" formControlName="price" name="price">
+    </div>
+    <div class="form-group">
+      <label for="publisher">Publisher</label>
+      <input type="text" class="form-control" id="publisher" formControlName="publisher" name="publisher">
+    </div>
+    <div class="form-group">
+      <label for="genre">genre</label>
+      <input type="text" class="form-control" id="genre" formControlName="genre" name="genre">
+
+    </div>
+    <div class="form-group">
+      <label for="authors">Choose Authors:</label>
+
+      <select class="form-select" multiple aria-label="multiple select example" name="authors" id="authors" formControlName="authors">
+        <option required class="disabled" *ngFor="let author of book.authors" [ngValue]="author" selected>1{{author.authorName}}</option>
+        <option required *ngFor="let newAuthor of authors | async"  [ngValue]="newAuthor">
+          <P *ngFor="let author1 of book.authors">
+          <small *ngIf="newAuthor.authorName!=author1.authorName">{{newAuthor.authorName}}</small>
+          </P>
+          </option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!updateBookForm.valid">Update</button>
+
+  </form>
+</div>
