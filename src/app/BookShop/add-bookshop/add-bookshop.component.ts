@@ -22,7 +22,7 @@ export class AddBookshopComponent implements OnInit {
     location: ["",Validators.required],
     contactNumber: ["",Validators.minLength(11)],
     email: ["",Validators.required],
-    books: [[],Validators.required],
+    booklist: [[],Validators.required],
   });
   ngOnInit(): void {
     this.reloadData();

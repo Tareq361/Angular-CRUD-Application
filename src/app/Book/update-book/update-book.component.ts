@@ -24,7 +24,7 @@ export class UpdateBookComponent implements OnInit {
     title:[this.book.title,[Validators.required]],
     price: [this.book.price,Validators.required],
     yearOfPublish: [this.book.yearOfPublish,Validators.required],
-    authors: [[],Validators.required],
+    authors: [this.book.authors,Validators.required],
     genre: [this.book.genre,Validators.minLength(5)],
     publisher: [this.book.publisher,],
   });
@@ -42,6 +42,7 @@ export class UpdateBookComponent implements OnInit {
         this.updateBookForm.controls['price'].setValue(this.book.price);
         this.updateBookForm.controls['yearOfPublish'].setValue(this.book.yearOfPublish);
         this.updateBookForm.controls['genre'].setValue(this.book.genre);
+        this.updateBookForm.controls['authors'].setValue(this.book.authors);
         this.updateBookForm.controls['publisher'].setValue(this.book.publisher);
       }, error => console.log(error));
 

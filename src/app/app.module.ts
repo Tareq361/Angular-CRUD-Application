@@ -20,6 +20,7 @@ const routes: Routes = [
   { path: 'Books', component: ListBooksComponent },
   { path: 'Bookshops', component: ListBookshopsComponent },
   { path: 'AddBookshops', component: AddBookshopComponent },
+  { path: 'Bookshops/UpdateBookshops/:id', component: UpdateBookshopComponent },
   { path: 'AddBook', component: AddBookComponent },
   {path: 'Books/UpdateBook/:id', component: UpdateBookComponent },
 

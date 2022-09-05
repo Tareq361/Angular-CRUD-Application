@@ -34,7 +34,7 @@
       <label for="authors">Choose Authors:</label>
 
       <select class="form-select" multiple aria-label="multiple select example" name="authors" id="authors" formControlName="authors">
-        <option required class="disabled" *ngFor="let author of book.authors" [ngValue]="author" selected>1{{author.authorName}}</option>
+        <option required  *ngFor="let author of book.authors" [ngValue]="author" selected>{{author.authorName}}</option>
         <option required *ngFor="let newAuthor of authors | async"  [ngValue]="newAuthor">
           <P *ngFor="let author1 of book.authors">
           <small *ngIf="newAuthor.authorName!=author1.authorName">{{newAuthor.authorName}}</small>
